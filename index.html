@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ford</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="data:image/png;base64,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"
+              alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Ana Sayfa</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Fiyat Listesi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servis Randevusu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ford Bayileri</a>
+              </li>
+            </ul>
+            <h6>
+              <span class="badge bg-danger p-2 m-3">Yeni</span>
+            </h6><span class="navbar-text">Gelecek Şimdi Yanınızda</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- giriş ekranı -->
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://cdnepws.azureedge.net/getmedia/bcabc660-b5ac-43b8-8cf2-1ac8734d7c92/Mach-E-Anasayfa-widget-700x400.webp.aspx?ext=.webp~/getmedia/bcabc660-b5ac-43b8-8cf2-1ac8734d7c92/Mach-E-Anasayfa-widget-700x400.webp.aspx?ext=.webp"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yeni Mustang Mach-E</h5>
+            <p>Alternatif Akım: %100 Elektrikli Ford Mustang Mach-E</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://sador4x4.com/wp-content/uploads/2021/10/1-1024x702.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yeni Ford Ranger</h5>
+            <p>Daha GÜÇLÜ, Daha SAĞLAM, Daha DAYANIKLI.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="https://cdn.cetas.com.tr/Delivery/Public/Image/-1x-1/1_kl81i4vcks.jpg?format=webP"
+            class="d-block w-100"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yeni Focus</h5>
+            <p>Biz yapana kadar en iyisi bu!!!</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- card  alanı -->
+    <div class="d-flex mt-5 justify-content-evenly mx-auto">
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://ares.shiftdelete.net/2023/12/ford-tourneo-courier-ve-transit-courier-1.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Ford Torneo Crourier</h5>
+          <p class="card-text">
+            Dizel Manuel, Benzinli Manuel ve Otomatik motor seçenekleriyle Yeni
+            Ford Tourneo Courier, tüm hafta sonu planlarınız için hazır! SUV
+            çizgilerini taşıyan, yeni nesil bağlantı özellikleri ve etkileyici
+            yük taşıma alanı esnekliği ile yaratılan Yeni Ford Tourneo Courier’i
+            keşfedin. Fiyat Listesi
+          </p>
+          <a href="#" class="btn btn-primary">Keşfet</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://i0.wp.com/www.drivetime.tv/wp-content/uploads/2020/07/Yeni-Ford-Puma-3.jpg?resize=1261%2C906&ssl=1"
+          class="card-img-top"
+          alt="..."
+          style="height: 160px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Ford Puma Ecoboost Hibrit</h5>
+          <p class="card-text">
+            Akıllı tasarım ve mühendislikle hızlanmada %12'ye varan iyileşme ve
+            motora göre %10’a varan daha fazla yakıt verimliliği. Yenilikçi,
+            'insan odaklı' tasarım, cesur SUV stili, enerjik sürüş ve gün içinde
+            hobilerine yer açabileceğin geniş bagaj hacmi. Ford Puma, duruşu ve
+            özellikleriyle tüm dikkatleri üzerine çekiyor.
+          </p>
+          <a href="#" class="btn btn-primary">Keşfet</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://ares.shiftdelete.net/2022/03/focus.webp"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Ford Focus</h5>
+          <p class="card-text">
+            Ford Focus’un kusursuz özellikleriyle detayları farklı hissetmeye
+            hazır olun. Focus EcoBoost Hibrit teknolojisiyle elektrikli
+            sistemlerin verimli dünyasına ilk adımınızı atın. Amaca yönelik
+            olarak tasarlanan PowerShift çift kavramalı otomatik şanzımanla her
+            sürüşün keyfini doyasıya yaşayın.
+          </p>
+          <a href="#" class="btn btn-primary">Keşfet</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://static.daktilo.com/sites/1415/uploads/2023/08/28/ford-kuga-6.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Ford Kuga</h5>
+          <p class="card-text">
+            Tasarım ve Teknolojinin mükemmel birleşimi. Çarpıcı tasarımı,
+            verimli ve çevreci motor seçenekleri, rafine ve ergonomik iç
+            dizaynı, ileri teknolojileri ve aktif yaşam tarzına uyum sağlayan
+            yapısı ile Kuga otomobil severlerin bir SUV’den beklediklerinin çok
+            daha fazlasını sunuyor.
+          </p>
+          <a href="#" class="btn btn-primary">Keşfet</a>
+        </div>
+      </div>
+    </div>
+    <!-- yorum alanı -->
+    <div class="d-flex m-5 gap-3">
+      <div class="card" style="width: 50%;">
+        <img src="https://www.ford.com.tr/getmedia/dc7f7367-615e-4252-b13e-6b920962f68f/EtransitPhone-widget-980x551.jpg.aspx?width=980&height=551&ext=.jpg&ext=.jpg&ext=.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"><h5>E-Transit İle Ne Kadar Tasarruf Elde Edersiniz?</h5>Karbon ayak izini azaltmanın yanında işletme maliyetlerinizin E-Transit ile ne kadar azalacağını öğrenmek, kullanım şartlarınıza göre başa baş noktasına hangi km değerinde ulaşacağınızı hesaplayabilmek için tıklayın.</p>
+        </div>
+        <button class="btn btn-primary m-3" style="width: 6rem;">Hesapla</button>
+      </div>
+      <div class="card" style="width: 50%;">
+        <img src="https://www.ford.com.tr/getmedia/f263fd3e-53e6-4f61-8664-ab9efe8c2a68/Satis-Kamp-1440x810.jpg.aspx?width=1440&height=810&ext=.jpg&ext=.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"><h5>Ford Güncel Kampanyaları</h5>Ford, en güncel indirim, kredi ve faiz avantajlı kampanyalarıyla yanınızda. Bir Ford araca sahip olarak veya leasing yaparak geleceği bugünden yaşamaya başlamak için avantajlı kampanyaları keşfedin.</p>
+        </div>
+        <button class="btn btn-primary m-3" style="width: 6rem;">Keşfet</button>
+      </div>
+    </div>
+    <!-- müşteri hizmetleri -->
+    <div>
+      <h3 class="text-center m-4">Müşteri Hizmetleri</h3>
+      <div class="container overflow-hidden text-center bg-light w-75">
+        <div class="row gy-5">
+          <div class="col-6">
+            <div class="p-3"><i class="bi bi-telephone-fill p-2"></i> Emre AKMAN</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3"><i class="bi bi-telephone-fill p-2"></i>Alper PİLİÇ</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3"><i class="bi bi-telephone-fill p-2"></i>Furkan KARKIN</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3"><i class="bi bi-telephone-fill p-2"></i>İsmail ALTINKAYA</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- tablo -->
+    <h3 class="text-center m-4">Araç Sırası</h3>
+    <table class="table table-primary table-hover m-5 mx-auto w-75">
+      <tr>
+        <th>SIRA</th>
+        <th>İSİM-SOYİSİM</th>
+        <th>TELEFON</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Yusuf ANLAMAZ</td>
+        <td>05320603127</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mehmet ALTIN</td>
+        <td>05074986736</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Fatih BAYSAL</td>
+        <td>05357659832</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Semih ÖZKAN</td>
+        <td>05555638386</td>
+      </tr> <tr>
+        <td>5</td>
+        <td>Erdi TOSUN</td>
+        <td>05451283805</td>
+      </tr>
+    </table>
+    <!-- form alanı -->
+    <div
+      class="d-flex flex-column justify-content-center align-center w-50 m-5 mx-auto"
+    >
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          ><h5>Bize Ulaşın</h5></label
+        >
+        <input
+          type="text"
+          class="form-control m-2"
+          id="exampleFormControlInput1"
+          placeholder="İsim-Soyisim"
+        />
+        <input
+          type="email"
+          class="form-control m-2"
+          id="exampleFormControlInput1"
+          placeholder="Email Adresi"
+        />
+        <input
+          type="number"
+          class="form-control m-2"
+          id="exampleFormControlInput1"
+          placeholder="Telefon"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          ><h5>Konu</h5></label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
+        <button class="btn btn-primary mt-2">Gönder</button>
+      </div>
+    </div>
+    <!-- footer -->
+<footer class="text-light">
+<div class="container d-flex justify-content-around">
+  <span class="">
+    <h5>MODELLER</h5>
+    <p>Otomobiller</p>
+    <p>SUV Dünyası</p>
+    <p>Elektrikli Araçlar</p>
+    <p>Performans Araçları</p>
+    <p>Ticari Araçlar</p>
+  </span>
+  <span>
+    <h5>FORD HAKKINDA</h5>
+    <p>Kurumsal</p>
+    <p>Sürdürülebilirlik</p>
+    <p>Ford Performans</p>
+    <p>Geleceği Bugünden Yaşa</p>
+    <p>Ömrünü Tamamlamış Araçlar</p>
+  </span><span>
+    <h5>SOSYAL MEDYA</h5>
+    <p> <i class="bi bi-instagram"></i> İnstagram</p>
+    <p> <i class="bi bi-facebook"></i>Facebook</p>
+    <p> <i class="bi bi-youtube"></i>Youtube</p>
+    <p> <i class="bi bi-twitter"></i>Twitter</p>
+    <p> <i class="bi bi-linkedin"></i>Linkedin</p>
+  </span>
+</div>
+<p class="d-flex justify-content-center">
+  &#169 2024.tüm hakları <a href="https://github.com/ReactRover">Yusuf ANLAMAZ</a> tarafından saklıdır.
+</p>
+</footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+      integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
